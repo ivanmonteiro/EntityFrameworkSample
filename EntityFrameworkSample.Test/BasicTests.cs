@@ -5,11 +5,11 @@ using Program = EntityFrameworkSample.Api.Program;
 
 namespace EntityFrameworkSample.Test
 {
-    public class BasicTests : IClassFixture<WebApplicationFactory<Program>>
+    public class BasicTests : IClassFixture<CustomWebApplicationFactory<Program>>
     {
-        private readonly WebApplicationFactory<Program> _factory;
+        private readonly CustomWebApplicationFactory<Program> _factory;
 
-        public BasicTests(WebApplicationFactory<Program> factory)
+        public BasicTests(CustomWebApplicationFactory<Program> factory)
         {
             _factory = factory;
         }
