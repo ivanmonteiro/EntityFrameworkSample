@@ -13,7 +13,7 @@ public class CustomWebApplicationFactory<TProgram>
     {
         builder.ConfigureServices(services =>
         {
-            var dbContextDescriptor = services.SingleOrDefault(
+            var dbContextDescriptor = services.Single(
                 d => d.ServiceType ==
                     typeof(DbContextOptions<ApplicationDbContext>));
 
