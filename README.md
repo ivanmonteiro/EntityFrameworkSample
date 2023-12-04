@@ -1,6 +1,12 @@
 # EntityFrameworkSample
 
-Comprehensive Testing of Entity Framework Entities and Relationships within a .NET Core API.
+This is project adds comprehensive Testing of Entity Framework Entities and Relationships within a .NET Core API.
+
+## Introduction
+
+This is a sample project showing how to save entities **with changes to child entities/relationships** using Entity Framework in a .Net API with unit/integration tests to make sure changes are being persisted correctly.
+
+It is common to find errors or unexpected behavior when saving an entity with relationships when using Entity Framework (Core), especially in Web Applications and APIs. The main reason why I created this project is to write a sample application with tests that focus on making sure entities and relationships are being persisted correctly. I further detail the motivation behind this project below.
 
 ## Features
 
@@ -10,8 +16,6 @@ Comprehensive Testing of Entity Framework Entities and Relationships within a .N
 - [ ] delete item from one-to-many relationship
 
 ## Motivation
-
-Use case: saving an entity **with chages to child entites/relationships** in a .Net API using Entity Framework.
 
 The motivation to create this project is because most examples in documentation shows saving connected entities that share the same DbContext and most of them do not apply to APIs.
 
@@ -94,7 +98,7 @@ public static void SaveAnnotatedGraph(DbContext context, object rootEntity)
 
 It puts the responsibility of figuring out what actually was added/updated/deleted in the hands of the developer instead of the framework. It is hard work to figure out what added/updated/deleted and provide a fairly bug-free experience.
 
-I'm not keen to writing repetitive, boiler-plate code that is prone to error just to keep track of changes. 
+I'm not keen to writing repetitive, boiler-plate code that is prone to error just to keep track of changes.
 
 I'm more inclined to have a standard "automated" solution within the framework or in some community library that handles an entity *and* child entitites, handling a mixed state of inserts/updates/deletes.
 
@@ -105,7 +109,7 @@ For reference, some open source packages have gone this direction, like:
 [Detached-Mapper](https://github.com/leonardoporro/Detached-Mapper)
 [EF-Core-Simple-Graph-Update](https://github.com/WahidBitar/EF-Core-Simple-Graph-Update/blob/f71a103bda2593b85bd6415374a13f9eacc08394/src/Diwink.Extensions.EntityFrameworkCore/DbContextExtensions.cs#L40C46-L40C46)
 
-There is an issue in Entity Framework's GitHub repository called [Turn-key Disconnected Entities Solution](https://github.com/dotnet/efcore/issues/5536) that *might* provide a solution to solve this problem, but currenty it has few upvotes and has been postponed many times by the EF team.
+There is an issue in Entity Framework's GitHub repository called [Turn-key Disconnected Entities Solution](https://github.com/dotnet/efcore/issues/5536) that *might* provide a solution to solve this problem, but currently it has few upvotes and has been postponed many times by the EF team.
 
 ## References
 
